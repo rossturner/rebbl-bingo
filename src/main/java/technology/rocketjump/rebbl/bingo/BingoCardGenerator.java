@@ -81,6 +81,8 @@ public class BingoCardGenerator {
 		List<BingoItem> selectedItems = selectItemsForCard(coachName);
 
 		StringBuilder output = new StringBuilder();
+		output.append(coachName).append("\n");
+
 		for (int rowCursor = 0; rowCursor < 5; rowCursor++) {
 			for (int columnCursor = 0; columnCursor < 5; columnCursor++) {
 				BingoItem bingoItem = selectedItems.get(columnCursor + (rowCursor * 5));
