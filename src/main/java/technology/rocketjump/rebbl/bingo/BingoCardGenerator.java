@@ -118,7 +118,7 @@ public class BingoCardGenerator {
 		pickItem(selectedItems, random, likelihoodGroups.get(VERY_LIKELY));
 
 		BingoItem middleItem = selectedItems.remove(selectedItems.size() - 1);
-		selectedItems.add(13, middleItem);
+		selectedItems.add(12, middleItem);
 
 		return selectedItems;
 	}
