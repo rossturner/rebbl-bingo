@@ -112,9 +112,9 @@ public class BingoCardGenerator {
         StringBuilder output = new StringBuilder();
         output.append(coachName).append("\n");
 
-        for (int rowCursor = 0; rowCursor < 7; rowCursor++) {
-            for (int columnCursor = 0; columnCursor < 7; columnCursor++) {
-                BingoItem bingoItem = selectedItems.get(columnCursor + (rowCursor * 7));
+        for (int rowCursor = 0; rowCursor < 5; rowCursor++) {
+            for (int columnCursor = 0; columnCursor < 5; columnCursor++) {
+                BingoItem bingoItem = selectedItems.get(columnCursor + (rowCursor * 5));
                 output.append(bingoItem.name).append(CSV_DELIMITER);
             }
             output.append("\n");
@@ -145,8 +145,11 @@ public class BingoCardGenerator {
 
         Collections.shuffle(selectedItems, random);
 
-        // Finally, add in center tile as freebie
-        selectedItems.add(24, new BingoItem("*", VERY_LIKELY, "Freebie tile"));
+        // Finally, add in center tile as a very_likely item
+        pickItem(selectedItems, random, likelihoodGroups.get(VERY_LIKELY));
+
+        BingoItem middleItem = selectedItems.remove(selectedItems.size() - 1);
+        selectedItems.add(12, middleItem);
 
         return selectedItems;
     }
