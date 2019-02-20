@@ -4,11 +4,6 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
-import static technology.rocketjump.rebbl.bingo.BingoItem.BingoEventLikelihood.*;
 
 public class App {
 
