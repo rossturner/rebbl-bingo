@@ -100,7 +100,7 @@ public class BingoCardGenerator {
             System.out.print(mapEntry.getKey().name() + ": " + mapEntry.getValue().size());
 
             float proportion = ((float) mapEntry.getValue().size()) / ((float) allItems.size());
-            int numToPick = Math.round(proportion * (7 * 7 - 1));
+            int numToPick = Math.round(proportion * (5 * 5 - 1));
             numToPickPerGroup.put(mapEntry.getKey(), numToPick);
             System.out.println("\tTotal to pick: " + numToPick);
         }
